@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+<title>Photo Every Second</title>
+  <style>
+  
+html,
+body {
+  background:url(./img/soul2.jpg) #000000 no-repeat center center fixed;
+  background-size: contain, cover;
+}
+    video {
+
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+
+    }
+	    video2 {
+
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+
+    }
+	    video3 {
+
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+
+    }
+	    video4 {
+
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+
+    }
+	h2{white-space:pre-wrap;font-family: "Patrick Hand", "Segoe Script", "Caveat", cursive;font-size:18px;line-height:1.5}
+</style>
+</head>
+
+<body><table border=0><td><th>
+<table bgcolor="blue"><td><th><h1>Into The Blue<br>My Life Is Filled With Answers</h1><br>      <video id="video" autoplay muted playsinline></video></th></td></table></th>
+<th><table bgcolor="orange"><td><th><h1>Into The Orange<br>My Life Is Filled With Answers</h1><br>      <video id="video2" autoplay muted playsinline></video></th></td></table></th>
+<th><table bgcolor="green"><td><th><h1>Into The Green<br>My Life Is Filled With Answers</h1><br>      <video id="video3" autoplay muted playsinline></video> </th></td></table></th>
+<th><table bgcolor="pink"><td><th><h1>Into The Pink<br>My Life Is Filled With Answers</h1><br>       <video id="video4" autoplay muted playsinline></video></th></td></table></th>
+</td></table><center>
+<h2><font style="color:white;">HONESTSOUL ROOT-CREATION<br>My Life Is Filled With Answers</font></h2></center>
+  <script>
+    // Start camera
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('video').srcObject = stream;
+      } catch (err) {
+        console.error('Camera access denied or not available.', err);
+      }
+    }
+
+    startCamera();
+    async function startCamera2() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('video2').srcObject = stream;
+      } catch (err) {
+        console.error('Camera access denied or not available.', err);
+      }
+    }
+
+    startCamera2();
+	    async function startCamera3() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('video3').srcObject = stream;
+      } catch (err) {
+        console.error('Camera access denied or not available.', err);
+      }
+    }
+
+    startCamera3();
+	    async function startCamera4() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('video4').srcObject = stream;
+      } catch (err) {
+        console.error('Camera access denied or not available.', err);
+      }
+    }
+
+    startCamera4();
+    // Create 100 boxes
+    const grid = document.getElementById('grid');
+    for (let i = 0; i < 100; i++) {
+      const box = document.createElement('div');
+      box.className = 'box';
+      box.textContent = 'SCREEN';
+
+      box.addEventListener('click', () => {
+        box.classList.add('fade-out');
+        setTimeout(() => {
+          box.style.visibility = 'hidden';
+        }, 500); // Wait for the animation to finish
+      });
+
+      grid.appendChild(box);
+    }
+  </script>
+</body>
+</html>
+
