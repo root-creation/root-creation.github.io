@@ -41,6 +41,42 @@ body {
 
     }
 	h2{white-space:pre-wrap;font-family: "Patrick Hand", "Segoe Script", "Caveat", cursive;font-size:18px;line-height:1.5}
+	 .container {
+        max-width: 600px;
+    }
+
+    textarea, .text-view {
+        width: 100%;
+        min-height: 120px;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: #1c1c1c;
+        color: #fff;
+        white-space: pre-wrap;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .text-view {
+        cursor: pointer;
+        animation: fadeIn 0.25s ease;
+    }
+
+    .hint {
+        margin-top: 10px;
+        opacity: 0.6;
+        font-size: 13px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+    }
 </style>
 </head>
 
@@ -50,7 +86,38 @@ body {
 <th><table bgcolor="green"><td><th><h1>Into The Green</h1><br>      <video id="video3" autoplay muted playsinline></video> </th></td></table></th>
 <th><table bgcolor="pink"><td><th><h1>Into The Pink</h1><br>       <video id="video4" autoplay muted playsinline></video></th></td></table></th>
 </td></table><center>
-<h2><font style="color:white;">HONESTSOUL ROOT-CREATION</font></h2></center>
+<h2><font style="color:white;">HONESTSOUL ROOT-CREATION</font></h2>
+<div class="container">
+    <textarea id="editor" placeholder="Type something and press Ctrl + Enter"></textarea>
+   
+</div>
+</center>
+<script>
+const container = document.querySelector(".container");
+let textarea = document.getElementById("editor");
+
+textarea.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.key === "Enter") {
+        e.preventDefault();
+
+        const text = textarea.value.trim();
+        if (!text) return;
+
+        const div = document.createElement("div");
+        div.className = "text-view";
+        div.textContent = text;
+
+        // Replace textarea with div
+        textarea.replaceWith(div);
+
+
+    }
+});
+
+function attachListener() {
+    textarea.addEventListener("keydown", arguments.callee);
+}
+</script>
   <script>
     // Start camera
     async function startCamera() {
