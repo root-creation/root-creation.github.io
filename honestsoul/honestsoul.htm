@@ -33,13 +33,11 @@ body {
 
       width: 300px;
       height: 250px;
-      object-fit: cover;
 
-  clip-path: polygon(
-    50% 0%,    /* top */
-    0% 100%,   /* bottom left */
-    100% 100%  /* bottom right */
-  );
+  border-radius: 50%;
+  object-fit: cover;   /* fills the circle without distortion */
+  overflow: hidden;
+
 
     }
 	    #video4 {
@@ -47,15 +45,6 @@ body {
       width: 300px;
       height: 250px;
   object-fit: cover;
-
-  clip-path: polygon(
-    25% 0%,
-    75% 0%,
-    100% 50%,
-    75% 100%,
-    25% 100%,
-    0% 50%
-  );
 
     }
 	h2{white-space:pre-wrap;font-family: "Patrick Hand", "Segoe Script", "Caveat", cursive;font-size:18px;line-height:1.5}
